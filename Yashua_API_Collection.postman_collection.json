@@ -1,0 +1,532 @@
+{
+  "info": {
+    "name": "Yashua E-commerce Platform API",
+    "description": "Complete API collection for Yashua (牙刷商城) e-commerce platform",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost/yashua/MVC",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Frontend APIs",
+      "item": [
+        {
+          "name": "Homepage",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/index.php",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"]
+            }
+          }
+        },
+        {
+          "name": "Read Post",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/index.php?m=index&c=index&a=read&id=1",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"],
+              "query": [
+                {"key": "m", "value": "index"},
+                {"key": "c", "value": "index"},
+                {"key": "a", "value": "read"},
+                {"key": "id", "value": "1"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "Like Post",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/index.php?m=index&c=index&a=love&id=1&state=1",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"],
+              "query": [
+                {"key": "m", "value": "index"},
+                {"key": "c", "value": "index"},
+                {"key": "a", "value": "love"},
+                {"key": "id", "value": "1"},
+                {"key": "state", "value": "1"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "Collect Post",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/index.php?m=index&c=index&a=xiao&id=1&stat=1",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"],
+              "query": [
+                {"key": "m", "value": "index"},
+                {"key": "c", "value": "index"},
+                {"key": "a", "value": "xiao"},
+                {"key": "id", "value": "1"},
+                {"key": "stat", "value": "1"}
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "User Management",
+      "item": [
+        {
+          "name": "Registration Page",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/index.php?m=index&c=user&a=regist",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"],
+              "query": [
+                {"key": "m", "value": "index"},
+                {"key": "c", "value": "user"},
+                {"key": "a", "value": "regist"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "User Registration",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/x-www-form-urlencoded"}
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {"key": "username", "value": "testuser123"},
+                {"key": "password", "value": "password123"},
+                {"key": "rpassword", "value": "password123"},
+                {"key": "phone", "value": "13812345678"},
+                {"key": "yzm", "value": "1234"}
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/index.php?m=index&c=user&a=regist",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"],
+              "query": [
+                {"key": "m", "value": "index"},
+                {"key": "c", "value": "user"},
+                {"key": "a", "value": "regist"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "Login Page",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/index.php?m=index&c=user&a=login",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"],
+              "query": [
+                {"key": "m", "value": "index"},
+                {"key": "c", "value": "user"},
+                {"key": "a", "value": "login"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "User Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/x-www-form-urlencoded"}
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {"key": "username", "value": "testuser123"},
+                {"key": "password", "value": "password123"}
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/index.php?m=index&c=user&a=login",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"],
+              "query": [
+                {"key": "m", "value": "index"},
+                {"key": "c", "value": "user"},
+                {"key": "a", "value": "login"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "Change Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/x-www-form-urlencoded"}
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {"key": "oldpassword", "value": "password123"},
+                {"key": "password", "value": "newpassword123"},
+                {"key": "rpassword", "value": "newpassword123"},
+                {"key": "tijiao", "value": "1"}
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/index.php?m=index&c=user&a=pass",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"],
+              "query": [
+                {"key": "m", "value": "index"},
+                {"key": "c", "value": "user"},
+                {"key": "a", "value": "pass"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "User Logout",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/index.php?m=index&c=user&a=exit",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"],
+              "query": [
+                {"key": "m", "value": "index"},
+                {"key": "c", "value": "user"},
+                {"key": "a", "value": "exit"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "Verification Code",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/index.php?m=index&c=user&a=verify",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"],
+              "query": [
+                {"key": "m", "value": "index"},
+                {"key": "c", "value": "user"},
+                {"key": "a", "value": "verify"}
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Post Management",
+      "item": [
+        {
+          "name": "Create Post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/x-www-form-urlencoded"}
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {"key": "title", "value": "Sample Post Title"},
+                {"key": "content", "value": "This is the content of the sample post."},
+                {"key": "tijiao", "value": "1"}
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/index.php?m=index&c=post&a=list",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"],
+              "query": [
+                {"key": "m", "value": "index"},
+                {"key": "c", "value": "post"},
+                {"key": "a", "value": "list"}
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Comments",
+      "item": [
+        {
+          "name": "Post Comment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/x-www-form-urlencoded"}
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {"key": "id", "value": "1"},
+                {"key": "txt", "value": "This is a sample comment."}
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/index.php?m=index&c=send&a=huifu",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"],
+              "query": [
+                {"key": "m", "value": "index"},
+                {"key": "c", "value": "send"},
+                {"key": "a", "value": "huifu"}
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin APIs",
+      "item": [
+        {
+          "name": "Admin Dashboard",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/index.php?m=admin&c=index&a=index",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"],
+              "query": [
+                {"key": "m", "value": "admin"},
+                {"key": "c", "value": "index"},
+                {"key": "a", "value": "index"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "Site Information",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/index.php?m=admin&c=index&a=info",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"],
+              "query": [
+                {"key": "m", "value": "admin"},
+                {"key": "c", "value": "index"},
+                {"key": "a", "value": "info"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Site Information",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/x-www-form-urlencoded"}
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {"key": "title", "value": "My E-commerce Site"},
+                {"key": "stitle", "value": "Best Products Online"},
+                {"key": "work", "value": "E-commerce Developer"},
+                {"key": "phone", "value": "13812345678"},
+                {"key": "email", "value": "admin@example.com"}
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/index.php?m=admin&c=index&a=info",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"],
+              "query": [
+                {"key": "m", "value": "admin"},
+                {"key": "c", "value": "index"},
+                {"key": "a", "value": "info"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "Change Admin Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/x-www-form-urlencoded"}
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {"key": "mpass", "value": "oldpassword"},
+                {"key": "newpass", "value": "newpassword123"},
+                {"key": "submit", "value": "1"}
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/index.php?m=admin&c=index&a=pass",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"],
+              "query": [
+                {"key": "m", "value": "admin"},
+                {"key": "c", "value": "index"},
+                {"key": "a", "value": "pass"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "User Management",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/index.php?m=admin&c=index&a=book",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"],
+              "query": [
+                {"key": "m", "value": "admin"},
+                {"key": "c", "value": "index"},
+                {"key": "a", "value": "book"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Users",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/x-www-form-urlencoded"}
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {"key": "id[]", "value": "1"},
+                {"key": "id[]", "value": "2"}
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/index.php?m=admin&c=index&a=book",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"],
+              "query": [
+                {"key": "m", "value": "admin"},
+                {"key": "c", "value": "index"},
+                {"key": "a", "value": "book"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "Post Management",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/index.php?m=admin&c=index&a=column",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"],
+              "query": [
+                {"key": "m", "value": "admin"},
+                {"key": "c", "value": "index"},
+                {"key": "a", "value": "column"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Posts",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/x-www-form-urlencoded"}
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {"key": "id[]", "value": "1"},
+                {"key": "id[]", "value": "2"}
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/index.php?m=admin&c=index&a=column",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"],
+              "query": [
+                {"key": "m", "value": "admin"},
+                {"key": "c", "value": "index"},
+                {"key": "a", "value": "column"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "Comment Management",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/index.php?m=admin&c=index&a=list",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"],
+              "query": [
+                {"key": "m", "value": "admin"},
+                {"key": "c", "value": "index"},
+                {"key": "a", "value": "list"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Comments",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/x-www-form-urlencoded"}
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {"key": "id[]", "value": "1"},
+                {"key": "id[]", "value": "2"}
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/index.php?m=admin&c=index&a=list",
+              "host": ["{{baseUrl}}"],
+              "path": ["index.php"],
+              "query": [
+                {"key": "m", "value": "admin"},
+                {"key": "c", "value": "index"},
+                {"key": "a", "value": "list"}
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
